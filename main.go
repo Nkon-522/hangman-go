@@ -1,11 +1,8 @@
 package main
 
-import (
-	"fmt"
-	"hangman/helpers"
-)
+import "hangman/app"
 
 func main() {
-	fmt.Print("prueba\n")
-	helpers.Print()
+	b := app.App{}
+	b.Init()
 }
