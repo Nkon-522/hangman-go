@@ -65,6 +65,7 @@ func (app *App) chooseExitMenu() {
 }
 
 func (app *App) Init() {
+	app.title = "Hangman Game"
 	app.menu = "main"
 	for !app.finished {
 		app.printMenu()

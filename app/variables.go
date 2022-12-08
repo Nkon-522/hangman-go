@@ -1,7 +1,6 @@
 package app
 
 var mainMenuOptions = [...]string{"Play", "Login", "Leaderboard", "Exit"}
-
 var gameMenuOptions = [...]string{"Do Something", "Return"}
 var loginMenuOptions = [...]string{"Login", "Sign up", "Return"}
 var leaderboardMenuOptions = [...]string{"Return"}
@@ -24,6 +23,7 @@ var options = map[string]func(app *App){
 }
 
 type App struct {
+	title    string
 	menu     string
 	option   string
 	finished bool

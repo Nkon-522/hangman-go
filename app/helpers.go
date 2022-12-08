@@ -15,7 +15,7 @@ func (app *App) printMenuOptions() {
 func (app *App) printMenu() {
 	terminal.CallClear()
 
-	fmt.Println("Hangman Game")
+	fmt.Println(app.title)
 	fmt.Println("------------")
 
 	app.printMenuOptions()
