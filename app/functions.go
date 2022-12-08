@@ -2,48 +2,7 @@ package app
 
 import (
 	"fmt"
-	"hangman/terminal"
 )
-
-func printOptions(menuOptions []string) {
-	for index, option := range menuOptions {
-		fmt.Printf("%d. %s\n", index+1, option)
-	}
-}
-
-func (app *App) printMenu() {
-	terminal.CallClear()
-
-	fmt.Println("Hangman Game")
-	fmt.Println("------------")
-
-	if menu := app.menu; menu == "main" {
-		printOptions(mainMenuOptions[:])
-	} else if menu == "game" {
-		printOptions(gameMenuOptions[:])
-	} else if menu == "login" {
-		printOptions(loginMenuOptions[:])
-	} else if menu == "leaderboard" {
-		printOptions(leaderboardMenuOptions[:])
-	} else if menu == "exit" {
-		printOptions(exitMenuOptions[:])
-	}
-}
-
-func (app *App) chooseOption() {
-
-	if menu := app.menu; menu == "main" {
-		app.chooseMainMenu()
-	} else if menu == "game" {
-		app.chooseGameMenu()
-	} else if menu == "login" {
-		app.chooseLoginMenu()
-	} else if menu == "leaderboard" {
-		app.chooseLeaderboardMenu()
-	} else if menu == "exit" {
-		app.chooseExitMenu()
-	}
-}
 
 func (app *App) chooseMainMenu() {
 
