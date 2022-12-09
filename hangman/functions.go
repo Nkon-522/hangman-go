@@ -13,6 +13,12 @@ func init() {
 	vocabulary = helpers.ReadCsvFile("hangman/nounlist.csv")
 }
 
+func (hangman *hangman) Init(menu *string, option *string, finished *bool, user *string) {
+	for {
+		Start_game(*user)
+	}
+}
+
 func Start_game(user string) {
 	hangman := NewHangman()
 
@@ -44,6 +50,17 @@ func NewHangman() *hangman {
 	}
 
 	return hangman
+}
+
+func (hangman *hangman) chooseHangmanMenu() {
+	switch app.option {
+	case "1":
+		app.menu = "main"
+	case "2":
+		app.finished = true
+	default:
+
+	}
 }
 
 func (hangman *hangman) printHangman() {

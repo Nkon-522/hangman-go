@@ -1,5 +1,15 @@
 package hangman
 
+var hangmanMenuOptions = [...]string{"Go back to main menu", "Exit"}
+
+var menus = map[string][]string{
+	"hangman": hangmanMenuOptions[:],
+}
+
+var options = map[string]func(app *App){
+	"hangman": (*App).chooseHangmanMenu,
+}
+
 var vocabulary [][]string
 
 var vocals = []string{"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
