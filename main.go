@@ -1,6 +1,8 @@
 package main
 
-import "hangman/app"
+import (
+	"hangman/app"
+)
 
 func main() {
 	b := app.App{}

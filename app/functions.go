@@ -23,11 +23,22 @@ func (app *App) chooseMainMenu() {
 func (app *App) chooseGameMenu() {
 	switch app.option {
 	case "1":
-		app.menu = "game"
+		app.menu = "hangman"
 	case "2":
 		app.menu = "main"
 	default:
 
+	}
+}
+
+func (app *App) chooseHangmanMenu() {
+	switch app.option {
+	case "1":
+		app.menu = "hangman"
+	case "2":
+		app.menu = "main"
+	default:
+		app.finished = true
 	}
 }
 
@@ -67,6 +78,7 @@ func (app *App) chooseExitMenu() {
 func (app *App) Init() {
 	app.title = "Hangman Game"
 	app.menu = "main"
+	app.user = "Nicolas"
 	for !app.finished {
 		app.printMenu()
 		fmt.Print("Ingrese una opcion: ")

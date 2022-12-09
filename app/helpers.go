@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"hangman/hangman"
 	"hangman/terminal"
 	"log"
 )
@@ -14,6 +15,10 @@ func (app *App) printMenuOptions() {
 
 func (app *App) printMenu() {
 	terminal.CallClear()
+
+	if app.menu == "hangman" {
+		hangman.Start_game(app.user)
+	}
 
 	fmt.Println(app.title)
 	fmt.Println("------------")
