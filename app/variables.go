@@ -31,4 +31,5 @@ type App struct {
 	option   string
 	finished bool
 	user     string
+	mode     string
 }
