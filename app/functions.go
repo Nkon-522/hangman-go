@@ -6,6 +6,6 @@ func (app *App) Init() {
 	app.user = "Nicolas"
 	app.mode = "menu"
 	for !app.finished {
-		app.selectMode()
+		app.processMode()
 	}
 }

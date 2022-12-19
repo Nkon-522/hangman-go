@@ -1,15 +1,20 @@
 package app
 
 import (
-	"fmt"
+	"hangman/connection"
 	"hangman/hangman"
+	"hangman/menu"
 )
 
 func (app *App) menuMode() {
-	app.printMenu()
-	fmt.Print("Ingrese una opcion: ")
-	fmt.Scanln(&app.option)
-	app.chooseOption()
+	menuConnection := connection.MenuConnection{
+		Title:    &app.title,
+		Menu:     &app.menu,
+		Mode:     &app.mode,
+		Option:   &app.option,
+		Finished: &app.finished,
+	}
+	menu.InitMenu(&menuConnection)
 }
 
 func (app *App) hangmanMode() {
@@ -18,7 +23,7 @@ func (app *App) hangmanMode() {
 	app.menu = "hangman"
 }
 
-func (app *App) selectMode() {
+func (app *App) processMode() {
 	switch app.mode {
 	case "menu":
 		app.menuMode()
